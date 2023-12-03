@@ -1,23 +1,31 @@
 package com.paint.painter.shape;
-import ch.qos.logback.core.joran.sanity.Pair;
-public class Shape {
+public class Shape{
+    private int id;
+    private String type;
+    private String fill;
     private double x;
     private double y;
-    private String fill;
-
-    public Shape(double x, double y, String fill, boolean draggable) {
-        this.x = x;
-        this.y = y;
+    private double var1;
+    private double var2;
+    private double rotationAngle;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public String getFill() {
+        return fill;
+    }
+    public void setFill(String fill) {
         this.fill = fill;
-        this.draggable = draggable;
     }
-
-    private boolean draggable;
-
-    public Shape() {
-
-    }
-
     public double getX() {
         return x;
     }
@@ -30,50 +38,67 @@ public class Shape {
     public void setY(double y) {
         this.y = y;
     }
-    public String getFill() {
-        return fill;
+    public double getVar1() {
+        return var1;
     }
-    public void setFill(String fill) {
-        this.fill = fill;
+    public void setVar1(double var1) {
+        this.var1 = var1;
     }
-    public boolean isDraggable() {
-        return draggable;
+    public double getVar2() {
+        return var2;
     }
-    public void setDraggable(boolean draggable) {
-        this.draggable = draggable;
+    public void setVar2(double var2) {
+        this.var2 = var2;
     }
+    public double getRotationAngle() {
+        return rotationAngle;
+    }
+    public void setRotationAngle(double rotationAngle) {
+        this.rotationAngle = rotationAngle;
+    }
+    public void setShape(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle){}
 
-
-//    private Pair<Integer,Integer> center;
-//    private double angle;
-//    private String color;
-//    public Shape(Pair<Integer,Integer> c , double a , String col){
-//        this.center = c;
-//        this.angle = a;
-//        this.color = col;
-//    }
-//    public void setAngle(double angle) {
-//        this.angle = angle;
-//    }
-//    public Pair<Integer, Integer> getCenter() {
-//        return center;
-//    }
-//    public void setCenter(Pair<Integer, Integer> center) {
-//        this.center = center;
-//    }
-//    public void setColor(String color) {
-//        this.color = color;
-//    }
-//    public double getAngle() {
-//        return angle;
-//    }
-//    public String getColor() {
-//        return color;
+//    public Shape copy(int id, String type, String fill, double x, double y, double var1, double var2, double rotationAngle){
+//        shapeFactory factory = new shapeFactory();
+//        Shape shape = factory.makeShape(type);
+//        shape.setShape(id, type, fill, x, y, var1, var2, rotationAngle);
+//        return shape;
 //    }
 
 
-//    public void move (Pair<Integer,Integer> center){
-//        setCenter(center);
+//    private double x;
+//    private double y;
+//    private String fill;
+//    private boolean draggable;
+//    public Shape(double x, double y, String fill, boolean draggable) {
+//        this.x = x;
+//        this.y = y;
+//        this.fill = fill;
+//        this.draggable = draggable;
+//    }
+//    public double getX() {
+//        return x;
+//    }
+//    public void setX(double x) {
+//        this.x = x;
+//    }
+//    public double getY() {
+//        return y;
+//    }
+//    public void setY(double y) {
+//        this.y = y;
+//    }
+//    public String getFill() {
+//        return fill;
+//    }
+//    public void setFill(String fill) {
+//        this.fill = fill;
+//    }
+//    public boolean isDraggable() {
+//        return draggable;
+//    }
+//    public void setDraggable(boolean draggable) {
+//        this.draggable = draggable;
 //    }
 }
 

@@ -1,31 +1,29 @@
 package com.paint.painter.controller;
-
 import com.paint.painter.shape.Shape;
+import com.paint.painter.Operations;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.*;
 @RestController
 @CrossOrigin
-//@RequestMapping("/api/messages")
 public class MessageController {
-//    @PostMapping("/backend")
-//    public HashMap<String,String> post(@RequestBody Map<String, Object> payload) {
-//        HashMap<String, String> response = new HashMap<>();
-//        String helloMessage = payload.get("msg").toString();
-//        helloMessage += " Software Developer";
-//        response.put("msg",String.valueOf(helloMessage));
-//        return response;
-//    }
-@GetMapping("{arrayOfShapes}")
-public String getArrayOfShapes(@PathVariable("first") ArrayList<Shape> shapesList) {
-    // Your logic for handling GET requests for arrayOfShapes
-    //put in stack
-    return "Array of shapes response";
-}
-
-//when @GetMapping("undo") so pop from stack and put to a storeStack
-    //when @GetMapping("redo") so pop from storeStack and put to stack
+Operations operations = new Operations();
+@PostMapping(path = "/newShape")
+    public void createNewShape(@RequestParam("id") int id , @RequestParam("type") String type, @RequestParam("fill") String fill
+        , @RequestParam("x") double x, @RequestParam("y") double y, @RequestParam("var1") double var1, @RequestParam("var2") double var2, @RequestParam("rotationAngle") double rotationAngle){
+        // Your logic for handling GET requests for arrayOfShapes
+        // put in stack
+        operations.createNewShape(id,type,fill,x,y,var1,var2,rotationAngle);
+    }
+@PostMapping(path = "/getArrayOfShapes")
+    public ArrayList<Shape> getArrayOfShapes(){
+        return operations.draw();
+    }
+@PostMapping(path = "/undo")
+    public ArrayList<Shape> undo(){
+        return operations.undo();
+    }
+@PostMapping(path = "/redo")
+    public ArrayList<Shape> redo(){
+        return operations.redo();
+    }
 }

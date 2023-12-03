@@ -1,18 +1,22 @@
 <template>
-<Painter></Painter>
+<div id="app">
+  <painter> </painter>
+</div>
 </template>
 
-<script>
-import Painter from './components/Painter.vue'
 
-export default {
-  name: 'App',
-  components: {
-    Painter
-  }
-}
+<script>
+	import Painter from './components/Painter.vue'
+	
+	export default{
+	  name: 'App',
+	  components: {
+	    Painter
+	  }
+	}
 </script>
 
-<style>
+
+<style >
 
 </style>

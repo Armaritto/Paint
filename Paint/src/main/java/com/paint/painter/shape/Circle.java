@@ -9,27 +9,4 @@ public class Circle extends Shape{
         this.setY(y);
         this.setVar1(radius);
     }
-
-    public Shape copy(){
-        Circle circle = null;
-        try {
-            circle = (Circle) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-        return circle;
-    }
-
-
-//    private double radius;
-//    public Circle(double x, double y, String fill, boolean draggable) {
-//        super(x, y, fill, draggable);
-//    }
-//    public double getRadius() {
-//        return radius;
-//    }
-//    public void setRadius(double radius) {
-//        this.radius = radius;
-//    }
-
 }

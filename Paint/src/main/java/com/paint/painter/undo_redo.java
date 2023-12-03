@@ -23,11 +23,19 @@ public class undo_redo {
         undoStack.push(copy);
     }
     public ArrayList<Shape> undo(){
-        redoStack.push(undoStack.pop());
-        return undoStack.peek();
+        if(!undoStack.isEmpty()){
+            redoStack.push(undoStack.pop());
+            return undoStack.peek();
+        }
+        else
+            return null;
     }
     public ArrayList<Shape> redo(){
-        undoStack.push(redoStack.pop());
-        return undoStack.peek();
+        if(!redoStack.isEmpty()){
+            undoStack.push(redoStack.pop());
+            return undoStack.peek();
+        }
+        else
+            return null;
     }
 }

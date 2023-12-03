@@ -11,16 +11,4 @@ public class Square extends Shape{
         this.setVar2(width);
         this.setRotationAngle(rotationAngle);
     }
-    public Shape copy(){
-        Square square = null;
-        try {
-            square = (Square) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-        return square;
-    }
-//    public Square(double x, double y, String fill, boolean draggable) {
-//        super(x,y,fill,draggable);
-//    }
 }

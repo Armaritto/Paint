@@ -57,48 +57,5 @@ public class Shape{
         this.rotationAngle = rotationAngle;
     }
     public void setShape(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle){}
-
-//    public Shape copy(int id, String type, String fill, double x, double y, double var1, double var2, double rotationAngle){
-//        shapeFactory factory = new shapeFactory();
-//        Shape shape = factory.makeShape(type);
-//        shape.setShape(id, type, fill, x, y, var1, var2, rotationAngle);
-//        return shape;
-//    }
-
-
-//    private double x;
-//    private double y;
-//    private String fill;
-//    private boolean draggable;
-//    public Shape(double x, double y, String fill, boolean draggable) {
-//        this.x = x;
-//        this.y = y;
-//        this.fill = fill;
-//        this.draggable = draggable;
-//    }
-//    public double getX() {
-//        return x;
-//    }
-//    public void setX(double x) {
-//        this.x = x;
-//    }
-//    public double getY() {
-//        return y;
-//    }
-//    public void setY(double y) {
-//        this.y = y;
-//    }
-//    public String getFill() {
-//        return fill;
-//    }
-//    public void setFill(String fill) {
-//        this.fill = fill;
-//    }
-//    public boolean isDraggable() {
-//        return draggable;
-//    }
-//    public void setDraggable(boolean draggable) {
-//        this.draggable = draggable;
-//    }
 }
 

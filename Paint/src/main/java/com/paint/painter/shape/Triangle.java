@@ -11,17 +11,4 @@ public class Triangle extends Shape{
         this.setVar2(angleOfTriangle);
         this.setRotationAngle(rotationAngle);
     }
-    public Shape copy(){
-        Triangle triangle = null;
-        try {
-            triangle = (Triangle) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-        return triangle;
-    }
-//    public Triangle(double x, double y, String fill, boolean draggable) {
-//        super(x, y, fill, draggable);
-//    }
-
 }

@@ -11,31 +11,4 @@ public class Line extends Shape{
         this.setVar2(y2);
         this.setRotationAngle(rotationAngle);
     }
-    public Shape copy(){
-        Line line = null;
-        try {
-            line = (Line) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-        return line;
-    }
-//    private double endX;
-//    private double endY;
-//    public Line(double x, double y, String fill, boolean draggable) {
-//        super(x, y, fill, draggable);
-//    }
-//    public double getEndX() {
-//        return endX;
-//    }
-//    public void setEndX(double endX) {
-//        this.endX = endX;
-//    }
-//    public double getEndY() {
-//        return endY;
-//    }
-//    public void setEndY(double endY) {
-//        this.endY = endY;
-//    }
-
 }

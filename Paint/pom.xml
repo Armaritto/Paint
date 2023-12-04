@@ -28,7 +28,6 @@
             <artifactId>Gson</artifactId>
             <version>2.8.9</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

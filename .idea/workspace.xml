@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b6e13e-b808-46fa-87bc-921077a046e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/Operations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/controller/MessageController.java" afterDir="false" />
     </list>
     <list id="de326a96-aa3d-443e-855e-8c85995f4f06" name="Changes by Karene Antoine" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +100,7 @@
       <updated>1701249464440</updated>
       <workItem from="1701635234958" duration="7489000" />
       <workItem from="1701642763305" duration="3064000" />
-      <workItem from="1701689914080" duration="6574000" />
+      <workItem from="1701689914080" duration="7719000" />
     </task>
     <servers />
   </component>

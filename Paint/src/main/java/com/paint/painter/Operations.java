@@ -3,11 +3,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.paint.painter.shape.Shape;
 import com.paint.painter.shape.shapeFactory;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Path;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 public class Operations {
     ArrayList<Shape> shapes = new ArrayList<>();
@@ -77,6 +78,18 @@ public class Operations {
         UR.undoStack.push(shapes);
         return shapes;
     }
-
-
+    public void saveToXML(String path) throws IOException {
+        XMLEncoder e = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(path)));
+        e.writeObject(UR.undoStack.peek());
+        e.close();
+    }
+    public ArrayList<Shape> loadXML(String path) throws IOException {
+        XMLDecoder d = new XMLDecoder(new BufferedInputStream(new FileInputStream(path)));
+        shapes = (ArrayList<Shape>) d.readObject();
+        d.close();
+        UR.undoStack.clear();
+        UR.redoStack.clear();
+        UR.undoStack.push(shapes);
+        return shapes;
+    }
 }

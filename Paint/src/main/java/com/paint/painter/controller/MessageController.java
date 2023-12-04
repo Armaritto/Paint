@@ -2,18 +2,17 @@ package com.paint.painter.controller;
 import com.paint.painter.shape.Shape;
 import com.paint.painter.Operations;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.*;
 @RestController
 @CrossOrigin
 public class MessageController {
 Operations operations = new Operations();
 @PostMapping(path = "/newShape")
-    public void createNewShape(@RequestParam("id") int id , @RequestParam("type") String type, @RequestParam("fill") String fill
+    public Shape createNewShape(@RequestParam("id") int id , @RequestParam("type") String type, @RequestParam("fill") String fill
         , @RequestParam("x") double x, @RequestParam("y") double y, @RequestParam("var1") double var1, @RequestParam("var2") double var2, @RequestParam("rotationAngle") double rotationAngle){
         operations.createNewShape(id,type,fill,x,y,var1,var2,rotationAngle);
+        return operations.draw().get(operations.draw().size()-1);
     }
 @PostMapping(path = "/getArrayOfShapes")
     public ArrayList<Shape> getArrayOfShapes(){
@@ -41,16 +40,34 @@ Operations operations = new Operations();
         return operations.copy(prevID,newID);
     }
 @PostMapping(path = "/saveJSON")
-    public void saveJSON(@RequestParam("path") String path) throws IOException {
-        operations.saveToJson(path);
+    public String saveJSON(@RequestParam("path") String path){
+        try{
+            operations.saveToJson(path);
+            return "Saved successfully in JSON File";
+        }
+        catch(Exception e){
+            return "Error!";
+        }
     }
 @PostMapping(path = "/loadJSON")
     public ArrayList<Shape> loadJSON(@RequestParam("path") String path) throws IOException {
         return operations.loadJson(path);
     }
+@PostMapping(path = "/saveXML")
+    public String saveXML(@RequestParam("path") String path){
+        try{
+            operations.saveToXML(path);
+            return "Saved successfully in XML File";
+        }
+        catch(Exception e){
+            return "Error!";
+        }
+    }
+@PostMapping(path = "/loadXML")
+    public ArrayList<Shape> loadXML(@RequestParam("path") String path) throws IOException {
+        return operations.loadXML(path);
+    }
 }
 /*
     adapter DP
-    save in XML
-    load from XML
- */
+*/

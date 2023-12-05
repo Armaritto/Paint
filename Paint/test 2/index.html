@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/konva@9.2.3/konva.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+   
+    
+    <meta charset="utf-8" />
+
+ 
+  </head>
+
+  
+  <body>
+    <!-- <p>
+      Mouse pos: <b><span id="mouse-pos"></span></b>
+    </p> -->
+    <div id = "container" @click = "handleClick"></div>
+    <div id = "app">
+    <button @click = "handleCircle(); init();">Circle {{drawingCircle}}</button>
+    <button @click = "drawingEllipse = !drawingEllipse;handleEllipse() ">Ellipse {{drawingEllipse}}</button>
+    <button @click = "fillShape = !fillShape ">{{x}} {{fillShape}}</button>
+ 
+  <div v-if= fillShape>
+    <label for="colorpicker">Color Picker:</label>
+    <input v-model="c" type="color" id="colorpicker" value="#a865423">
+  </div> 
+     </div>
+
+    
+    
+   
+  <script src="js.js"></script>
+  </body>
+ 
+  
+</html>

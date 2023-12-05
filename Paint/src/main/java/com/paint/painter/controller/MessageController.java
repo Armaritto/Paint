@@ -68,6 +68,3 @@ Operations operations = new Operations();
         return operations.loadXML(path);
     }
 }
-/*
-    adapter DP
-*/

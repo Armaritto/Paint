@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b6e13e-b808-46fa-87bc-921077a046e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Paint/test 1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Paint/test 1/js.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Paint/test 1/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Paint/test 1/tst.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Paint/test 2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Paint/test 2/js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/controller/MessageController.java" afterDir="false" />
     </list>
     <list id="de326a96-aa3d-443e-855e-8c85995f4f06" name="Changes by Karene Antoine" comment="" />
-    <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="">
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
-    </list>
+    <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,17 +27,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="12" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="4" end1="4" start2="13" end2="14" changelist="cd353d54-3f6c-47ea-ae10-38f796c378a5" />
-        <range start1="7" end1="7" start2="17" end2="20" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="8" end1="13" start2="21" end2="58" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="15" end1="17" start2="60" end2="65" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -59,8 +34,8 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
+    &quot;associatedIndex&quot;: 1
+    }</component>
   <component name="ProjectId" id="2YqO5omSfO8PxEbSnEiMLQnQ3RE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -69,31 +44,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Armia/Documents/GitHub/Paint/Paint&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Armia/Documents/GitHub/Paint/Paint",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.general",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="Painter.vue" />

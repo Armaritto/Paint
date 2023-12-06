@@ -1,18 +1,20 @@
 <template>
-  
-
   <div>
-    
     <v-stage @click="handleClick" ref="stage" :config="configKonva">
       <v-layer  @wheel= "(event) =>{
         if(this.booleans.resizing){event.target.attrs.radius = Math.max(event.target.attrs.radius-Number(event.evt.deltaY)/20, 5);
           //layer.circles.pop();
         }
-         this.$forceUpdate();
-         }" 
+         //this.$forceUpdate();
+         }"
          @click="(event)=>{
-          console.log('clicked')
-          if(this.booleans.filling){event.target.attrs.fill = this.c; console.log('filled')}
+          console.log(event)
+          if(this.booleans.filling){
+
+            event.target.attrs.fill = this.c
+            var id = Number(event.target.attrs.id)
+            changeFill(event.target.attrs,this.c)
+          }
          }"
          ref="layer">
         <!-- <v-transformer>
@@ -32,10 +34,9 @@
         <v-line v-for="line in this.layer.lines" :config="line"></v-line>
         <v-regular-polygon v-for="shapeConfig in this.layer.triangles" :key="shapeConfig" class="shapeconfig"
                     :config="shapeConfig"></v-regular-polygon>
-      
       </v-layer>
     </v-stage>
-    
+
   </div>
   <button @click="refreshBooleans(); this.booleans.drawingLine = !this.booleans.drawingLine">line {{this.booleans.drawingLine}}</button>
   <button @click="refreshBooleans(); this.booleans.drawingTriangle = !this.booleans.drawingTriangle">triangle {{this.booleans.drawingTriangle}}</button>
@@ -49,8 +50,7 @@
   <div v-if= this.booleans.filling>
     <label for="colorpicker">Color Picker:</label>
     <input v-model="c" type="color" id="colorpicker" value="#ffff33">
-  </div> 
-
+  </div>
 </template>
 
 <script>
@@ -61,68 +61,255 @@ export default {
   data() {
     return {
       c:'#9933ff',
+      changeFill: function (shape, fill) {
+        console.log(shape)
+        fetch('http://localhost:8080/edit?' + new URLSearchParams({
+          id: Number(shape.id),
+          type: shape.type,
+          fill: fill,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 50,
+          var2: 0,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function (response) {
+              return response.json()
+            })
+            .then((data) => {
+              this.parseArrayList(data)
+            })
+      },
+      parseArrayList: function(ArrayList){
+        for(var a in this.layer){
+          a = [];
+        }
+          for(var i in ArrayList){
+            var shape= ArrayList[i];
+            if(shape.fill === 'null'){
+              shape.fill = null
+            }
+          if(shape.type === "circle"){
+            this.layer.circles.push({
+              scaleX: 1,
+              scaleY: 1,
+              id: shape.id.toString(),
+              x: shape.x,
+              y: shape.y,
+              radius: shape.var1,
+              fill: shape.fill,
+              stroke: 'black',
+              strokeWidth: 1,
+              draggable: true
+            })
+          }
+          else if(shape.type === "rectangle"){
+            this.layer.rects.push({
+              scaleX: 1,
+              scaleY: 1,
+              x: shape.x,
+              id: shape.id.toString(),
+              y: shape.y,
+              width: shape.var2,
+              height: shape.var1,
+              fill: shape.fill,
+              stroke: 'black',
+              strokeWidth: 1,
+              draggable: true
+            })
+          }
+          else if(shape.type === "triangle"){
+            this.layer.triangles.push({
+              scaleX: 1,
+              scaleY: 1,
+              id: shape.id.toString(),
+              x: shape.x,
+              y: shape.y,
+              radius: shape.var1,
+              sides: shape.var2,
+              fill: shape.fill,
+              stroke: 'black',
+              strokeWidth: 1,
+              draggable: true
+            })
+          }
+          else if(shape.type === "square"){
+            this.layer.squares.push({
+              x: shape.x,
+              id: shape.id.toString(),
+              y: shape.y,
+              width: shape.var2,
+              height: shape.var1,
+              fill: shape.fill,
+              stroke: 'black',
+              strokeWidth: 1,
+              draggable: true
+            })
+          }
+          else if(shape.type === "ellipse"){
+            this.layer.ellipses.push({
+              x: shape.x,
+              y: shape.y,
+              id: shape.id.toString(),
+              radiusX: shape.var1,
+              radiusY: shape.var2,
+              fill: shape.fill,
+              stroke: 'black',
+              strokeWidth: 1,
+              draggable: true
+            })
+          }
+          else if(shape.type === "line"){
+            this.layer.lines.push({
+              offsetX: 0,
+              offsetY: 0,
+              lineJoin: 'round',
+              x: shape.x,
+              y: shape.y,
+              points: [0, 0, shape.var1, shape.var2],
+              stroke: 'black',
+              strokeWidth:3,
+              tension: 0,
+              draggable: true
+            })
+          }
+        }
+      },
       handle: function() {
       if (this.booleans.drawingCircle == true) {
-        var newCircle = JSON.parse(JSON.stringify(this.configCircle))
-        newCircle.x = event.pageX;
-        newCircle.y = event.pageY;
-        newCircle.idInt = this.generateId()
-        newCircle.id = newCircle.idInt.toString()
-        this.layer.circles.push(newCircle)
+        fetch('http://localhost:8080/newShape?' + new URLSearchParams({
+          id: this.generateId(),
+          type: "circle",
+          fill: null,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 50,
+          var2: 0,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function(response){
+              return response.json()})
+            .then((data) =>{
+              this.parseArrayList(data)
+            })
         this.booleans.drawingCircle = false;
       }
       else if (this.booleans.drawingSquare == true) {
-        var newSquare = JSON.parse(JSON.stringify(this.configSquare))
-        newSquare.x = event.pageX;
-        newSquare.y = event.pageY;
-        newSquare.idInt = this.generateId()
-        newSquare.id = newSquare.idInt.toString()
-        this.layer.squares.push(newSquare);
+        fetch('http://localhost:8080/newShape?' + new URLSearchParams({
+          id: this.generateId(),
+          type: "square",
+          fill: null,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 100,
+          var2: 100,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function(response){
+              return response.json()})
+            .then((data) =>{
+              this.parseArrayList(data)
+            })
         this.booleans.drawingSquare = false;
       }
       else if (this.booleans.drawingRectangle == true) {
-        var newRect = JSON.parse(JSON.stringify(this.configRect))
-        newRect.x = event.pageX;
-        newRect.y = event.pageY;
-        newRect.idInt = this.generateId()
-        newRect.id = newRect.idInt.toString()
-        this.layer.rects.push(newRect);
+        fetch('http://localhost:8080/newShape?' + new URLSearchParams({
+          id: this.generateId(),
+          type: "rectangle",
+          fill: null,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 100,
+          var2: 150,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function(response){
+              return response.json()})
+            .then((data) =>{
+              this.parseArrayList(data)
+            })
         this.booleans.drawingRectangle = false;
       }
       else if (this.booleans.drawingEllipse == true) {
-        var newEllipse = JSON.parse(JSON.stringify(this.configEllipse))
-        newEllipse.x = event.pageX;
-        newEllipse.y = event.pageY;
-        newEllipse.idInt = this.generateId()
-        newEllipse.id = newEllipse.idInt.toString()
-        this.layer.ellipses.push(newEllipse);
+        fetch('http://localhost:8080/newShape?' + new URLSearchParams({
+          id: this.generateId(),
+          type: "ellipse",
+          fill: null,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 100,
+          var2: 150,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function(response){
+              return response.json()})
+            .then((data) =>{
+              this.parseArrayList(data)
+            })
         this.booleans.drawingEllipse = false;
       }
       else if (this.booleans.drawingLine == true) {
-        var newLine = JSON.parse(JSON.stringify(this.configLine))
-        newLine.x = event.pageX;
-        newLine.y = event.pageY;
-        newLine.idInt = this.generateId()
-        newLine.id = newLine.idInt.toString()
-        this.layer.lines.push(newLine);
+        fetch('http://localhost:8080/newShape?' + new URLSearchParams({
+          id: this.generateId(),
+          type: "line",
+          fill: null,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 100,
+          var2: 100,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function(response){
+              return response.json()})
+            .then((data) =>{
+              this.parseArrayList(data)
+            })
         this.booleans.drawingLine = false;
       }
       else if (this.booleans.drawingTriangle == true) {
-        var newTriangle = JSON.parse(JSON.stringify(this.configTriangle))
-        newTriangle.x = event.pageX;
-        newTriangle.y = event.pageY;
-        newTriangle.idInt = this.generateId()
-        newTriangle.id = newTriangle.idInt.toString()
-        this.layer.triangles.push(newTriangle);
+        fetch('http://localhost:8080/newShape?' + new URLSearchParams({
+          id: this.generateId(),
+          type: "triangle",
+          fill: null,
+          x: event.pageX,
+          y: event.pageY,
+          var1: 100,
+          var2: 3,
+          rotationAngle: 0
+        }),
+            {
+              method: 'POST'
+            })
+            .then(function(response){
+              return response.json()})
+            .then((data) =>{
+              this.parseArrayList(data)
+            })
         this.booleans.drawingTriangle = false;
       }
       else if (this.booleans.moving == true) {
 
       }
-      
-      
     },
-      generateId: function(){return Math.floor(Math.random()*1000000)},
+      generateId: function(){return Math.floor(Math.random()*1000000000)},
       booleans:{
       drawingCircle: false,
       drawingEllipse: false,
@@ -222,7 +409,7 @@ export default {
       // k.addEventListener("wheel", (event) => {this.layer.circles[k].scale.x *= event.deltaY})
     },
     handleWheel(){
-        //var idd = 
+        //var idd =
         console.timeLog(event.deltaY)
         // const item = this.layer.circles.find((i) => i.id === idd);
         // item.scale.x *=2
@@ -233,7 +420,7 @@ export default {
           this.booleans[i]= false;
       }
     },
- 
+
     generateItems() {
       this.items.push({
         x: Math.random() * width,
@@ -256,11 +443,13 @@ export default {
     // handleDragend(e) {
     //   this.dragItemId = null;
     // },
+    onClickCircleButton(){
 
-    
+    }
+
   },
   mounted() {
-  
+
   },
 };
 </script>

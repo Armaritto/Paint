@@ -9,10 +9,10 @@ import java.util.*;
 public class MessageController {
 Operations operations = new Operations();
 @PostMapping(path = "/newShape")
-    public Shape createNewShape(@RequestParam("id") int id , @RequestParam("type") String type, @RequestParam("fill") String fill
+    public ArrayList<Shape> createNewShape(@RequestParam("id") int id , @RequestParam("type") String type, @RequestParam("fill") String fill
         , @RequestParam("x") double x, @RequestParam("y") double y, @RequestParam("var1") double var1, @RequestParam("var2") double var2, @RequestParam("rotationAngle") double rotationAngle){
         operations.createNewShape(id,type,fill,x,y,var1,var2,rotationAngle);
-        return operations.draw().get(operations.draw().size()-1);
+        return operations.draw();
     }
 @PostMapping(path = "/getArrayOfShapes")
     public ArrayList<Shape> getArrayOfShapes(){

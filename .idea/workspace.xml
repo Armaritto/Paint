@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b6e13e-b808-46fa-87bc-921077a046e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
     </list>
     <list id="de326a96-aa3d-443e-855e-8c85995f4f06" name="Changes by Karene Antoine" comment="" />
     <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="" />
@@ -55,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Armia/Documents/GitHub/Paint/Paint",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/webApp_example/Paint",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

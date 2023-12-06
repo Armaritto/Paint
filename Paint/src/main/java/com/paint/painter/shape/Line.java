@@ -1,7 +1,7 @@
 package com.paint.painter.shape;
 public class Line extends Shape{
     @Override
-    public void setShape(int id, String type,String fill,double x1, double y1, double x2, double y2, double rotationAngle){
+    public void setShape(int id, String type,String fill,double x1, double y1, double x2, double y2, double rotationAngle,double ScaleX, double ScaleY){
         this.setId(id);
         this.setType(type);
         this.setFill(fill);
@@ -10,5 +10,7 @@ public class Line extends Shape{
         this.setVar1(x2);
         this.setVar2(y2);
         this.setRotationAngle(rotationAngle);
+        this.setScaleX(ScaleX);
+        this.setScaleY(ScaleY);
     }
 }

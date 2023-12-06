@@ -8,6 +8,20 @@ public class Shape{
     private double var1;
     private double var2;
     private double rotationAngle;
+    private double ScaleX;
+    private double ScaleY;
+    public double getScaleY() {
+        return ScaleY;
+    }
+    public void setScaleY(double scaleY) {
+        ScaleY = scaleY;
+    }
+    public double getScaleX() {
+        return ScaleX;
+    }
+    public void setScaleX(double scaleX) {
+        ScaleX = scaleX;
+    }
     public int getId() {
         return id;
     }
@@ -56,6 +70,22 @@ public class Shape{
     public void setRotationAngle(double rotationAngle) {
         this.rotationAngle = rotationAngle;
     }
-    public void setShape(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle){}
+    public void setShape(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle,double ScaleX, double ScaleY){}
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", fill='" + fill + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                ", var1=" + var1 +
+                ", var2=" + var2 +
+                ", rotationAngle=" + rotationAngle +
+                ", ScaleX=" + ScaleX +
+                ", ScaleY=" + ScaleY +
+                '}';
+    }
 }
 

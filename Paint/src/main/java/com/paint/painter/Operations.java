@@ -61,7 +61,7 @@ public class Operations {
     public ArrayList<Shape> copy(int prevID, int newID){
         for(int i=0; i<shapes.size(); i++){
             if(shapes.get(i).getId()==prevID){
-                createNewShape(newID,shapes.get(i).getType(),shapes.get(i).getFill(),shapes.get(i).getX(),shapes.get(i).getY(),shapes.get(i).getVar1(),shapes.get(i).getVar2(),shapes.get(i).getRotationAngle(),shapes.get(i).getScaleX(),shapes.get(i).getScaleY());
+                createNewShape(newID,shapes.get(i).getType(),shapes.get(i).getFill(),shapes.get(i).getX()+10,shapes.get(i).getY()+10,shapes.get(i).getVar1(),shapes.get(i).getVar2(),shapes.get(i).getRotationAngle(),shapes.get(i).getScaleX(),shapes.get(i).getScaleY());
             }
         }
         return shapes;

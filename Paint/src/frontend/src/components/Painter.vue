@@ -1,10 +1,135 @@
 <template>
   <body>
-    <div>
+    <div style="display: flex;justify-content: center">
     <table>
       <tr>
         <td>
-          <div class="playground">
+          <div class="button-container" style="background: #083556;margin-left: 20px;margin-right: 20px;max-width: 50px">
+            <table style="display: flex; flex-direction: column; align-items: center">
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingLine = !this.booleans.drawingLine">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/dykoqszm.json"
+                        trigger="hover"
+                        colors="primary:#083556,secondary:#ffffff"
+                        style="width:50px;height:70px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Line
+                    </div>
+                  </div>
+                </button>
+              </tr>
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingTriangle = !this.booleans.drawingTriangle">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/qluhlwas.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Triangle
+                    </div>
+                  </div>
+                </button>
+              </tr>
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingCircle = !this.booleans.drawingCircle">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/jeycryzx.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Circle
+                    </div>
+                  </div>
+                </button>
+              </tr>
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingSquare = !this.booleans.drawingSquare">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/vasuakrs.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Square
+                    </div>
+                  </div>
+                </button>
+              </tr>
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingEllipse = !this.booleans.drawingEllipse">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/cdzmvgnm.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Ellipse
+                    </div>
+                  </div>
+                </button>
+              </tr>
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingRectangle = !this.booleans.drawingRectangle">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/maetoptg.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Rectangle
+                    </div>
+                  </div>
+                </button>
+              </tr>
+              <tr>
+                <button class="blue-button" @click="refreshBooleans(); this.booleans.filling = !this.booleans.filling">
+                  <div style="display: flex; flex-direction: column; align-items: center">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/wuvorxbv.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                    <div>
+                      <br>
+                      Color
+                    </div>
+                  </div>
+                </button>
+                <div v-if= this.booleans.filling>
+                  <input v-model="c" type="color" id="colorpicker" value="#ffff33">
+                </div>
+                <div v-else style="margin-bottom: 27px; color: #083556">
+
+                </div>
+              </tr>
+            </table>
+
+          </div>
+        </td>
+        <td>
+          <div class="playground" style="background: #ffffff">
   <v-stage @click="handleClick" @mousedown="handleStageMouseDown" @touchstart="handleStageMouseDown" ref="stage" :config="configKonva">
     <v-layer  @wheel= "(event) =>{
         if(this.booleans.resizing){event.target.attrs.radius = Math.max(event.target.attrs.radius-Number(event.evt.deltaY)/20, 5);
@@ -13,15 +138,18 @@
          //this.$forceUpdate();
          }"
               @click="(event)=>{
-          console.log('clicked')
           if(this.booleans.filling){
             event.target.attrs.fill = this.c
             var id = Number(event.target.attrs.id)
-            //changeFill(event.target.attrs,this.c)
+            changeFill(event.target.attrs,this.c)
           }
           else if(this.booleans.deleting){
             var id = Number(event.target.attrs.id)
             this.deleteShape(id)
+          }
+          else if(this.booleans.copying){
+            var id = Number(event.target.attrs.id)
+            this.copy(id)
           }
          }"
               ref="layer">
@@ -48,115 +176,137 @@
   </div>
   </td>
   <td>
-    <div class="button-container" style="background: #083556;">
-      <table>
+    <div class="button-container" style="background: #083556">
+      <table style="display: flex; flex-direction: column; align-items: center">
         <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingLine = !this.booleans.drawingLine">
-            <lord-icon
-                src="https://cdn.lordicon.com/dykoqszm.json"
-                trigger="hover"
-                colors="primary:#083556,secondary:#ffffff"
-                style="width:70px;height:70px">
-            </lord-icon>
+          <button class="blue-button" @click="refreshBooleans(); this.booleans.copying = !this.booleans.copying">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/wzwygmng.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Copy
+              </div>
+            </div>
           </button>
-        </tr>
-        <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingTriangle = !this.booleans.drawingTriangle">
-            <lord-icon
-                src="https://cdn.lordicon.com/qluhlwas.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
-          </button>
-        </tr>
-        <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingCircle = !this.booleans.drawingCircle">
-            <lord-icon
-                src="https://cdn.lordicon.com/jeycryzx.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
-          </button>
-        </tr>
-        <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingSquare = !this.booleans.drawingSquare">
-            <lord-icon
-                src="https://cdn.lordicon.com/vasuakrs.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
-          </button>
-        </tr>
-        <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingEllipse = !this.booleans.drawingEllipse">
-            <lord-icon
-                src="https://cdn.lordicon.com/cdzmvgnm.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
-          </button>
-        </tr>
-        <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.drawingRectangle = !this.booleans.drawingRectangle">
-            <lord-icon
-                src="https://cdn.lordicon.com/maetoptg.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
-          </button>
-        </tr>
-        <tr>
-          <button class="blue-button" @click="refreshBooleans(); this.booleans.filling = !this.booleans.filling">
-            <lord-icon
-                src="https://cdn.lordicon.com/wuvorxbv.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
-          </button>
-          <div v-if= this.booleans.filling>
-            <input v-model="c" type="color" id="colorpicker" value="#ffff33">
-          </div>
-          <div v-else style="margin-bottom: 9px; color: #083556">
-            .
-          </div>
         </tr>
         <tr>
           <button class="blue-button" @click="refreshBooleans(); this.booleans.deleting = !this.booleans.deleting">
-            <lord-icon
-                src="https://cdn.lordicon.com/drxwpfop.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style="width:50px;height:50px">
-            </lord-icon>
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/drxwpfop.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Delete
+              </div>
+            </div>
           </button>
         </tr>
         <tr>
-          <button class="blue-button" @click="refreshBooleans(); undo();">↶</button>
+          <button class="blue-button" @click="refreshBooleans(); undo();">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/eavayqgw.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Undo
+              </div>
+            </div>
+          </button>
         </tr>
         <tr>
-          <button  class="blue-button" @click="refreshBooleans(); redo();">↷</button>
+          <button  class="blue-button" @click="refreshBooleans(); redo();">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/usmjfnfh.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px;">
+              </lord-icon>
+              <div>
+                <br>
+                Redo
+              </div>
+            </div>
+          </button>
         </tr>
         <tr>
-          <button class="blue-button" @click="refreshBooleans() ; saveJOSNFile();">save JSON</button>
+          <button class="blue-button" @click="refreshBooleans() ; saveJOSNFile();">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/eyvmrkbh.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Save JSON
+              </div>
+            </div>
+          </button>
         </tr>
         <tr>
-          <button class="blue-button" @click="refreshBooleans() ; saveXMLFile();">save XML</button>
+          <button class="blue-button" @click="refreshBooleans() ; saveXMLFile();">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/eyvmrkbh.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Save XML
+              </div>
+            </div>
+          </button>
         </tr>
         <tr>
-          <button class="blue-button" @click="refreshBooleans() ; loadJSONFile();">load JSON</button>
+          <button class="blue-button" @click="refreshBooleans() ; loadJSONFile();">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/jdsvypqr.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Load JSON
+              </div>
+            </div>
+          </button>
         </tr>
         <tr>
-          <button class="blue-button" @click="refreshBooleans() ; loadXMLFile();">load XML</button>
+          <button class="blue-button" @click="refreshBooleans() ; loadXMLFile();">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <lord-icon
+                  src="https://cdn.lordicon.com/jdsvypqr.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  style="width:50px;height:50px">
+              </lord-icon>
+              <div>
+                <br>
+                Load XML
+              </div>
+            </div>
+          </button>
         </tr>
-
       </table>
-
     </div>
   </td>
   </tr>
@@ -198,6 +348,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   margin-bottom: -2px;
+  padding: 15px;
 }
 
 .blue-button:hover {
@@ -209,39 +360,32 @@
 <script>
 import lottie from "lottie-web";
 import { defineElement } from "@lordicon/element";
-
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
 import Konva from "konva";
-const width = window.innerWidth * 0.9;
+const width = window.innerWidth * 0.85;
 const height = window.innerHeight * 0.95;
 export default {
   data() {
     return {
       c:'#9933ff',
-
-      // changeFill: function (shape, fill) {
-      //   console.log(shape)
-      //   fetch('http://localhost:8080/edit?' + new URLSearchParams({
-      //     id: Number(shape.id),
-      //     type: shape.type,
-      //     fill: fill,
-      //     x: event.pageX,
-      //     y: event.pageY,
-      //     var1: 50,
-      //     var2: 0,
-      //     rotationAngle: 0
-      //   }),
-      //       {
-      //         method: 'POST'
-      //       })
-      //       .then(function (response) {
-      //         return response.json()
-      //       })
-      //       .then((data) => {
-      //         this.parseArrayList(data)
-      //       })
-      // },
+      changeFill: function(shape,fill){
+        if(shape.type == "rectangle"){
+          this.edit(shape.id,shape.type,fill,shape.x,shape.y,shape.height,shape.width,shape.rotation,shape.scaleX,shape.scaleY)
+        }
+        else if(shape.type == "circle"){
+          this.edit(shape.id,shape.type,fill,shape.x,shape.y,shape.radius,0,0,shape.scaleX,shape.scaleY)
+        }
+        else if(shape.type == "square"){
+          this.edit(shape.id,shape.type,fill,shape.x,shape.y,shape.height,shape.width,shape.rotation,shape.scaleX,shape.scaleY)
+        }
+        else if(shape.type == "triangle"){
+          this.edit(shape.id,shape.type,fill,shape.x,shape.y,shape.radius,3,shape.rotation,shape.scaleX,shape.scaleY)
+        }
+        else if(shape.type == "ellipse"){
+          this.edit(shape.id,shape.type,fill,shape.x,shape.y,shape.radiusX,shape.radiusY,shape.rotation,shape.scaleX,shape.scaleY)
+        }
+      },
       saveJSON: function(Path){
           fetch('http://localhost:8080/saveJSON?' + new URLSearchParams({
             path: Path
@@ -325,6 +469,20 @@ export default {
               .then((data) => {
                 this.parseArrayList(data)
               })
+      },
+      copy:function(ID){
+        console.log(ID)
+        fetch('http://localhost:8080/copy?' + new URLSearchParams({
+          prevID: Number(ID),
+          newID: this.generateId()
+        }),{method: 'POST'})
+            .then(function (response) {
+              return response.json()
+            })
+            .then((data) => {
+              console.log(data)
+              this.parseArrayList(data)
+            })
       },
       // clear: function(){
       //   this.layer.circles = [];
@@ -488,7 +646,7 @@ export default {
           id: this.generateId(),
           type: "circle",
           fill: null,
-          x: event.pageX-17,
+          x: event.pageX-120,
           y: event.pageY-10,
           var1: 50,
           var2: 0,
@@ -511,7 +669,7 @@ export default {
           id: this.generateId(),
           type: "square",
           fill: null,
-          x: event.pageX-17,
+          x: event.pageX-120,
           y: event.pageY-10,
           var1: 100,
           var2: 100,
@@ -534,7 +692,7 @@ export default {
           id: this.generateId(),
           type: "rectangle",
           fill: null,
-          x: event.pageX-17,
+          x: event.pageX-120,
           y: event.pageY-10,
           var1: 100,
           var2: 150,
@@ -557,7 +715,7 @@ export default {
           id: this.generateId(),
           type: "ellipse",
           fill: null,
-          x: event.pageX-17,
+          x: event.pageX-120,
           y: event.pageY-10,
           var1: 100,
           var2: 150,
@@ -580,7 +738,7 @@ export default {
           id: this.generateId(),
           type: "line",
           fill: null,
-          x: event.pageX-17,
+          x: event.pageX-120,
           y: event.pageY-10,
           var1: 100,
           var2: 100,
@@ -603,7 +761,7 @@ export default {
           id: this.generateId(),
           type: "triangle",
           fill: null,
-          x: event.pageX-17,
+          x: event.pageX-120,
           y: event.pageY-10,
           var1: 100,
           var2: 3,
@@ -621,9 +779,6 @@ export default {
             })
         this.booleans.drawingTriangle = false;
       }
-      else if (this.booleans.moving == true) {
-
-      }
     },
       generateId: function(){return Math.floor(Math.random()*1000000)},
       booleans:{
@@ -636,7 +791,8 @@ export default {
       resizing: false,
       moving: false,
       filling: false,
-        deleting: false
+      deleting: false,
+      copying: false
     },
       configKonva: {
         width: width,
@@ -779,6 +935,7 @@ export default {
           } else {
             this.selectedShapeName = '';
           }
+
           break;
         case "triangle" :
           const triangle = this.layer.triangles.find((r) => r.id === id);
@@ -803,6 +960,7 @@ export default {
           } else {
             this.selectedShapeName = '';
           }
+
           break;
         case "line" :
           const line = this.layer.lines.find((r) => r.id === id);
@@ -943,6 +1101,7 @@ export default {
     },
     loadJSONFile(){
       var path = prompt('Enter path','D:/paint.json')
+      this.loadJSON(path)
     },
     loadXMLFile(){
       var path = prompt('Enter path','D:/paint.xml')

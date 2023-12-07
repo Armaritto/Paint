@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b6e13e-b808-46fa-87bc-921077a046e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/package.json" afterDir="false" />
@@ -13,23 +12,13 @@
       <change beforePath="$PROJECT_DIR$/Paint/project/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/Operations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Ellipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Ellipse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Line.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/shape/Triangle.java" afterDir="false" />
     </list>
     <list id="280acc92-3a4c-428c-97ef-dd33a1a8fc1a" name="Changes by Karene Antoine" comment="" />
-    <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="">
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
-    </list>
+    <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,68 +37,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue">
-      <ranges>
-        <range start1="1" end1="4" start2="1" end2="9" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="9" end1="11" start2="14" end2="16" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="12" end1="13" start2="17" end2="17" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="15" end1="16" start2="19" end2="24" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="18" end1="39" start2="26" end2="47" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="40" end1="53" start2="48" end2="165" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="55" end1="55" start2="167" end2="208" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="56" end1="56" start2="209" end2="214" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="57" end1="59" start2="215" end2="217" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="63" end1="74" start2="221" end2="263" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="85" end1="85" start2="274" end2="362" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="86" end1="89" start2="363" end2="370" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="96" end1="98" start2="377" end2="380" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="105" end1="105" start2="387" end2="388" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="107" end1="107" start2="390" end2="391" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="110" end1="112" start2="394" end2="397" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="120" end1="120" start2="405" end2="406" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="125" end1="127" start2="411" end2="414" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="135" end1="135" start2="422" end2="423" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="140" end1="140" start2="428" end2="431" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="148" end1="148" start2="439" end2="440" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="153" end1="153" start2="445" end2="448" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="161" end1="161" start2="456" end2="457" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="166" end1="166" start2="462" end2="465" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="169" end1="169" start2="468" end2="469" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="175" end1="175" start2="475" end2="476" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="178" end1="178" start2="479" end2="482" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="186" end1="188" start2="490" end2="492" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="190" end1="191" start2="494" end2="497" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="207" end1="209" start2="513" end2="515" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="211" end1="212" start2="517" end2="520" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="228" end1="230" start2="536" end2="538" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="232" end1="233" start2="540" end2="543" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="249" end1="251" start2="559" end2="561" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="253" end1="254" start2="563" end2="566" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="270" end1="272" start2="582" end2="584" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="274" end1="275" start2="586" end2="589" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="291" end1="293" start2="605" end2="607" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="295" end1="296" start2="609" end2="612" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="311" end1="312" start2="627" end2="628" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="322" end1="322" start2="638" end2="639" changelist="cd353d54-3f6c-47ea-ae10-38f796c378a5" />
-        <range start1="328" end1="328" start2="645" end2="648" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="335" end1="336" start2="655" end2="656" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="338" end1="338" start2="658" end2="661" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="350" end1="350" start2="673" end2="674" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="359" end1="359" start2="683" end2="686" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="381" end1="381" start2="708" end2="711" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="399" end1="400" start2="729" end2="730" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="410" end1="415" start2="740" end2="770" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="416" end1="416" start2="771" end2="824" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="417" end1="417" start2="825" end2="930" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="422" end1="422" start2="935" end2="950" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="423" end1="433" start2="951" end2="953" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="445" end1="450" start2="965" end2="970" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-        <range start1="451" end1="452" start2="971" end2="971" changelist="cd353d54-3f6c-47ea-ae10-38f796c378a5" />
-        <range start1="456" end1="461" start2="975" end2="980" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -127,31 +54,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "vue-konva-",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/webApp_example/Paint",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "CodeWithMe",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vue-konva-&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/webApp_example/Paint&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="Painter.vue" />
@@ -198,6 +125,8 @@
       <workItem from="1701857921828" duration="17879000" />
       <workItem from="1701876199297" duration="10000" />
       <workItem from="1701876218480" duration="26742000" />
+      <workItem from="1701933039640" duration="4477000" />
+      <workItem from="1701938062189" duration="3929000" />
     </task>
     <servers />
   </component>

@@ -15,11 +15,12 @@ public class Operations {
     shapeFactory factory = new shapeFactory();
     undo_redo UR = new undo_redo();
     public ArrayList<Shape> draw(){
+        System.out.println(UR.getUndoStack().peek());
         return UR.getUndoStack().peek();
     }
-    public void createNewShape(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle){
+    public void createNewShape(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle, double ScaleX, double ScaleY){
         Shape temp = factory.makeShape(type);
-        temp.setShape(id,type,fill,x,y,var1,var2,rotationAngle);
+        temp.setShape(id,type,fill,x,y,var1,var2,rotationAngle,ScaleX,ScaleY);
         shapes.add(temp);
         UR.addInUndoStack(shapes);
     }
@@ -28,17 +29,22 @@ public class Operations {
             return UR.undo();
         }
         catch(EmptyStackException e){
-            return null;
+            return new ArrayList<Shape>();
         }
     }
     public ArrayList<Shape>redo(){
-        return UR.redo();
+        try{
+            return UR.redo();
+        }
+        catch(EmptyStackException e){
+            return new ArrayList<Shape>();
+        }
     }
-    public ArrayList<Shape> edit(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle){
+    public ArrayList<Shape> edit(int id, String type,String fill,double x, double y, double var1, double var2, double rotationAngle, double ScaleX, double ScaleY){
         for(int i=0; i<shapes.size(); i++){
             if(shapes.get(i).getId()==id){
                 shapes.remove(i);
-                createNewShape(id,type,fill,x,y,var1,var2,rotationAngle);
+                createNewShape(id,type,fill,x,y,var1,var2,rotationAngle,ScaleX,ScaleY);
             }
         }
         return shapes;
@@ -55,7 +61,7 @@ public class Operations {
     public ArrayList<Shape> copy(int prevID, int newID){
         for(int i=0; i<shapes.size(); i++){
             if(shapes.get(i).getId()==prevID){
-                createNewShape(newID,shapes.get(i).getType(),shapes.get(i).getFill(),shapes.get(i).getX(),shapes.get(i).getY(),shapes.get(i).getVar1(),shapes.get(i).getVar2(),shapes.get(i).getRotationAngle());
+                createNewShape(newID,shapes.get(i).getType(),shapes.get(i).getFill(),shapes.get(i).getX()+10,shapes.get(i).getY()+10,shapes.get(i).getVar1(),shapes.get(i).getVar2(),shapes.get(i).getRotationAngle(),shapes.get(i).getScaleX(),shapes.get(i).getScaleY());
             }
         }
         return shapes;
@@ -91,5 +97,8 @@ public class Operations {
         UR.redoStack.clear();
         UR.undoStack.push(shapes);
         return shapes;
+    }
+    public void clear(){
+        UR.undoStack.push(new ArrayList<Shape>());
     }
 }

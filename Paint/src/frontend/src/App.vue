@@ -1,4 +1,5 @@
 <template>
+
 <Painter></Painter>
 </template>
 

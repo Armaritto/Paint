@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b6e13e-b808-46fa-87bc-921077a046e9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/package.json" afterDir="false" />
@@ -12,13 +13,13 @@
       <change beforePath="$PROJECT_DIR$/Paint/project/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/project/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/project/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/main/java/com/paint/painter/Operations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/null" beforeDir="false" afterPath="$PROJECT_DIR$/null" afterDir="false" />
     </list>
     <list id="280acc92-3a4c-428c-97ef-dd33a1a8fc1a" name="Changes by Karene Antoine" comment="" />
-    <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="" />
+    <list id="cd353d54-3f6c-47ea-ae10-38f796c378a5" name="Changes by Lenovo" comment="">
+      <change beforePath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +37,31 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Paint/src/frontend/src/components/Painter.vue">
+      <ranges>
+        <range start1="154" end1="154" start2="154" end2="155" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="389" end1="389" start2="390" end2="402" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="503" end1="504" start2="516" end2="516" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="508" end1="510" start2="520" end2="522" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="642" end1="643" start2="654" end2="656" changelist="cd353d54-3f6c-47ea-ae10-38f796c378a5" />
+        <range start1="647" end1="650" start2="660" end2="663" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="670" end1="673" start2="683" end2="687" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="693" end1="696" start2="707" end2="710" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="716" end1="719" start2="730" end2="733" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="739" end1="742" start2="753" end2="756" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="762" end1="765" start2="776" end2="779" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="809" end1="810" start2="823" end2="824" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="822" end1="823" start2="836" end2="837" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="833" end1="834" start2="847" end2="848" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="846" end1="847" start2="860" end2="861" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="858" end1="859" start2="872" end2="873" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="891" end1="893" start2="905" end2="929" changelist="cd353d54-3f6c-47ea-ae10-38f796c378a5" />
+        <range start1="914" end1="915" start2="950" end2="950" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+        <range start1="1011" end1="1012" start2="1046" end2="1047" changelist="d9b6e13e-b808-46fa-87bc-921077a046e9" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,7 +90,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vue-konva-&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/webApp_example/Paint&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -127,6 +153,9 @@
       <workItem from="1701876218480" duration="26742000" />
       <workItem from="1701933039640" duration="4477000" />
       <workItem from="1701938062189" duration="3929000" />
+      <workItem from="1701942673900" duration="1571000" />
+      <workItem from="1701951536614" duration="883000" />
+      <workItem from="1701967921688" duration="7398000" />
     </task>
     <servers />
   </component>

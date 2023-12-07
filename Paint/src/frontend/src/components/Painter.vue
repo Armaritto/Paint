@@ -152,6 +152,7 @@
             this.copy(id)
           }
          }"
+              @dragend="handleDragEnd"
               ref="layer">
       <!-- <v-transformer>
         <v-circle :config="{
@@ -387,6 +388,18 @@ export default {
         }
       },
       saveJSON: function(Path){
+          fetch('http://localhost:8080/getArrayOfShapes?' + new URLSearchParams({
+            path: Path
+          }),
+              {
+                method: 'POST'
+              })
+              .then(function (response) {
+                return response.json()
+              })
+              .then((data) => {
+                console.log(data)
+              })
           fetch('http://localhost:8080/saveJSON?' + new URLSearchParams({
             path: Path
           }),
@@ -501,13 +514,12 @@ export default {
       //   console.log(this.layer)
       // },
       edit: function(ID,TYPE,FILL,X,Y,VAR1,VAR2,ROTATIONANGLE,SCALEX,SCALEY){
-        console.log(FILL)
         fetch('http://localhost:8080/edit?' + new URLSearchParams({
           id: Number(ID),
           type: TYPE,
           fill: FILL,
-          x: X,
-          y: Y,
+          x: Number(X),
+          y: Number(Y),
           var1: VAR1,
           var2: VAR2,
           rotationAngle: ROTATIONANGLE,
@@ -640,14 +652,15 @@ export default {
           }
         }
       },
-      handle: function() {
+      handle: function(e) {
+        console.log(e)
       if (this.booleans.drawingCircle == true) {
         fetch('http://localhost:8080/newShape?' + new URLSearchParams({
           id: this.generateId(),
           type: "circle",
-          fill: null,
-          x: event.pageX-120,
-          y: event.pageY-10,
+          fill: "#ffffff",
+          x: e.evt.layerX,
+          y: e.evt.layerY,
           var1: 50,
           var2: 0,
           rotationAngle: 0,
@@ -668,9 +681,10 @@ export default {
         fetch('http://localhost:8080/newShape?' + new URLSearchParams({
           id: this.generateId(),
           type: "square",
-          fill: null,
-          x: event.pageX-120,
-          y: event.pageY-10,
+          fill: "#ffffff",
+          x: e.evt.layerX,
+          y: e.evt.layerY,
+
           var1: 100,
           var2: 100,
           rotationAngle: 0,
@@ -691,9 +705,9 @@ export default {
         fetch('http://localhost:8080/newShape?' + new URLSearchParams({
           id: this.generateId(),
           type: "rectangle",
-          fill: null,
-          x: event.pageX-120,
-          y: event.pageY-10,
+          fill: "#ffffff",
+          x: e.evt.layerX,
+          y: e.evt.layerY,
           var1: 100,
           var2: 150,
           rotationAngle: 0,
@@ -714,9 +728,9 @@ export default {
         fetch('http://localhost:8080/newShape?' + new URLSearchParams({
           id: this.generateId(),
           type: "ellipse",
-          fill: null,
-          x: event.pageX-120,
-          y: event.pageY-10,
+          fill: "#ffffff",
+          x: e.evt.layerX,
+          y: e.evt.layerY,
           var1: 100,
           var2: 150,
           rotationAngle: 0,
@@ -737,9 +751,9 @@ export default {
         fetch('http://localhost:8080/newShape?' + new URLSearchParams({
           id: this.generateId(),
           type: "line",
-          fill: null,
-          x: event.pageX-120,
-          y: event.pageY-10,
+          fill: "#ffffff",
+          x: e.evt.layerX,
+          y: e.evt.layerY,
           var1: 100,
           var2: 100,
           rotationAngle: 0,
@@ -760,9 +774,9 @@ export default {
         fetch('http://localhost:8080/newShape?' + new URLSearchParams({
           id: this.generateId(),
           type: "triangle",
-          fill: null,
-          x: event.pageX-120,
-          y: event.pageY-10,
+          fill: "#ffffff",
+          x: e.evt.layerX,
+          y: e.evt.layerY,
           var1: 100,
           var2: 3,
           rotationAngle: 0,
@@ -807,7 +821,7 @@ export default {
         width: 162,
         height: 100,
         stroke: 'black',
-        fill: null,
+        fill: "#ffffff",
         strokeWidth: 1,
         draggable: true,
       },
@@ -820,7 +834,7 @@ export default {
         width: 100,
         height: 100,
         stroke: 'black',
-        fill: null,
+        fill: "#ffffff",
         strokeWidth: 1,
         draggable: true
       },
@@ -831,7 +845,7 @@ export default {
         x: 250,
         y: 250,
         radius: 50,
-        fill: null,
+        fill: "#ffffff",
         stroke: 'black',
         strokeWidth: 1,
         draggable: true
@@ -844,7 +858,7 @@ export default {
         y: 250,
         radiusX: 100,
         radiusY: 50,
-        fill: null,
+        fill: "#ffffff",
         stroke: 'black',
         strokeWidth: 1,
         draggable: true
@@ -856,7 +870,7 @@ export default {
         x: 250,
         y: 250,
         radius: 50,
-        fill: null,
+        fill: "#ffffff",
         stroke: 'black',
         strokeWidth: 1,
         draggable: true
@@ -889,8 +903,30 @@ export default {
     };
   },
   methods: {
-    handleClick(){
-      this.handle()
+    handleDragEnd(e){
+      switch (e.target.attrs.type){
+        case "rectangle" :
+          this.handleTransformEndRect(e)
+          break;
+        case "triangle" :
+          this.handleTransformEndTriangle(e)
+          break;
+        case "square" :
+          this.handleTransformEndSquare(e)
+          break;
+        case "circle" :
+          this.handleTransformEndCircle(e)
+          break;
+        case "line" :
+          this.handleTransformEndLine(e)
+          break;
+        case "ellipse" :
+          this.handleTransformEndEllipse(e)
+          break;
+      }
+    },
+    handleClick(e){
+      this.handle(e)
       // for(var k in this.layer.circles)
       // k.addEventListener("wheel", (event) => {this.layer.circles[k].scale.x *= event.deltaY})
     },
@@ -912,7 +948,6 @@ export default {
     },
     handleStageMouseDown(e) {
       // clicked on stage - clear selection
-      console.log(e.target.attrs.type)
       if (e.target === e.target.getStage()) {
         this.selectedShapeName = '';
         this.updateTransformer();
@@ -1009,7 +1044,7 @@ export default {
       ellipse.scaleX = e.target.scaleX();
       ellipse.scaleY = e.target.scaleY();
       ellipse.fill = e.target.fill();
-      this.edit(ellipse.id,ellipse.type,ellipse.fill,ellipse.x,ellipse.y,ellipse.radiusX,ellipse.radiusY,ellipse.rotation,ellipse.scaleY,ellipse.scaleX)
+      this.edit(ellipse.id,ellipse.type,ellipse.fill,ellipse.x,ellipse.y,ellipse.radiusX,ellipse.radiusY,ellipse.rotation,ellipse.scaleX,ellipse.scaleY)
 
     },
     handleTransformEndSquare(e) {

@@ -23,10 +23,12 @@ public class Operations {
         temp.setShape(id,type,fill,x,y,var1,var2,rotationAngle,ScaleX,ScaleY);
         shapes.add(temp);
         UR.addInUndoStack(shapes);
+        UR.redoStack.clear();
     }
     public ArrayList<Shape> undo(){
         try{
-            return UR.undo();
+            shapes = UR.undo();
+            return shapes;
         }
         catch(EmptyStackException e){
             return new ArrayList<Shape>();
@@ -34,7 +36,8 @@ public class Operations {
     }
     public ArrayList<Shape>redo(){
         try{
-            return UR.redo();
+            shapes = UR.redo();
+            return shapes;
         }
         catch(EmptyStackException e){
             return new ArrayList<Shape>();

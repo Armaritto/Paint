@@ -279,9 +279,9 @@
           <button class="blue-button" @click="refreshBooleans() ; loadJSONFile();">
             <div style="display: flex; flex-direction: column; align-items: center">
               <lord-icon
-                  src="https://cdn.lordicon.com/jdsvypqr.json"
+                  src="https://cdn.lordicon.com/smwmetfi.json"
                   trigger="hover"
-                  colors="primary:#ffffff,secondary:#ffffff"
+                  colors="primary:#ffffff"
                   style="width:50px;height:50px">
               </lord-icon>
               <div>
@@ -295,9 +295,9 @@
           <button class="blue-button" @click="refreshBooleans() ; loadXMLFile();">
             <div style="display: flex; flex-direction: column; align-items: center">
               <lord-icon
-                  src="https://cdn.lordicon.com/jdsvypqr.json"
+                  src="https://cdn.lordicon.com/smwmetfi.json"
                   trigger="hover"
-                  colors="primary:#ffffff,secondary:#ffffff"
+                  colors="primary:#ffffff"
                   style="width:50px;height:50px">
               </lord-icon>
               <div>
@@ -364,6 +364,7 @@ import { defineElement } from "@lordicon/element";
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
 import Konva from "konva";
+import app from "@/App.vue";
 const width = window.innerWidth * 0.85;
 const height = window.innerHeight * 0.95;
 export default {
@@ -452,6 +453,7 @@ export default {
               .then((data) => {
                 this.parseArrayList(data)
               })
+          app.methods.updateTransformer();
         }
         catch(err){
           console.log("error")

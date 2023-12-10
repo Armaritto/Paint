@@ -28,7 +28,7 @@ public class undo_redo {
             return undoStack.peek();
         }
         else
-            return null;
+            return new ArrayList<Shape>();
     }
     public ArrayList<Shape> redo(){
         if(!redoStack.isEmpty()){
@@ -36,6 +36,6 @@ public class undo_redo {
             return undoStack.peek();
         }
         else
-            return null;
+            return undoStack.peek();
     }
 }

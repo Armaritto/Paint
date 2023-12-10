@@ -8,8 +8,12 @@
       <change beforePath="$PROJECT_DIR$/../.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/src/components/Painter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/src/components/Painter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/paint/painter/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/paint/painter/Operations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/paint/painter/undo_redo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/paint/painter/undo_redo.java" afterDir="false" />
     </list>
+    <list id="df4473f2-fe2a-49a1-9bb2-8c35a5932cb9" name="Changes by ADMIN" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +86,10 @@
       <workItem from="1701984848611" duration="42000" />
       <workItem from="1702030707701" duration="132000" />
       <workItem from="1702036426993" duration="623000" />
-      <workItem from="1702038072614" duration="4572000" />
+      <workItem from="1702038072614" duration="4698000" />
+      <workItem from="1702050206360" duration="2032000" />
+      <workItem from="1702123927868" duration="545000" />
+      <workItem from="1702154562917" duration="6925000" />
     </task>
     <servers />
   </component>
